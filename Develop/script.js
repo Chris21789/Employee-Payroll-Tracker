@@ -9,8 +9,22 @@ const collectEmployees = function () {
 
   while (addingEmployees) {
     const firstName = window.prompt("Enter first name:");
+
+    // if (!firstName) {
+    //   return;
+    // }
+
     const lastName = window.prompt("Enter last name:");
+
+    // if (!lastName) {
+    //   return;
+    // }
+
     const salary = window.prompt("Enter salary:");
+
+    // if (!salary) {
+    //   return;
+    // }
 
     const employees = {
       firstName: firstName,
@@ -19,7 +33,7 @@ const collectEmployees = function () {
     };
 
     employeesArray.push(employees);
-    
+
     addingEmployees = window.confirm("Do you want to add another employee?");
   }
 
@@ -33,18 +47,21 @@ const displayAverageSalary = function (employeesArray) {
 
   for (let i = 0; i < employeesArray.length; i++) {
     const currentEmployee = employeesArray[i];
-    
-    sum += currentEmployee.salary;    
-  }
-  
-  const avgSalary = sum/employeesArray.length;
 
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${avgSalary.toLocaleString("en-US", {style: "currency", currency: "USD"})}`);
+    sum += currentEmployee.salary;
+  }
+
+  const avgSalary = sum / employeesArray.length;
+
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${avgSalary.toLocaleString("en-US", { style: "currency", currency: "USD" })}`);
 }
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  const randEmployee = (employeesArray[(Math.floor(Math.random()*employeesArray.length))]);
+
+  console.log(`Congratulations to ${randEmployee.firstName} ${randEmployee.lastName}, our random drawing winner!`);
 }
 
 /*
