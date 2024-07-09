@@ -22,8 +22,6 @@ const collectEmployees = function () {
 
     const salaryInput = window.prompt("Enter salary:");
     
-    console.log(salaryInput);
-    
     if (isNaN(salaryInput)) {
       salary = 0;
     } else if (salaryInput===null) {
