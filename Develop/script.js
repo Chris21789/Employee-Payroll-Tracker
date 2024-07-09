@@ -20,11 +20,19 @@ const collectEmployees = function () {
     //   return;
     // }
 
-    const salary = window.prompt("Enter salary:");
-
-    // if (!salary) {
-    //   return;
-    // }
+    const salaryInput = window.prompt("Enter salary:");
+    
+    console.log(salaryInput);
+    
+    if (isNaN(salaryInput)) {
+      salary = 0;
+    } else if (salaryInput===null) {
+      salary = 0;
+    } else if (!salaryInput) {
+      salary = 0;
+    } else {
+      salary = salaryInput;
+    }
 
     const employees = {
       firstName: firstName,
